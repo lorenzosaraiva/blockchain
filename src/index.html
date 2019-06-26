@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de doações</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Lista de doações</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">CPF</th>
+                  <th scope="col">CNPJ</th>
+                </tr>
+              </thead>
+              <tbody id="donationResults">
+              </tbody>
+            </table>
+            <hr/>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+          Quantidade: <input type="text" name="donationamount" id="donationamount">
+          CPF: <input type="text" name="donationcpf" id="donationcpf">
+          <form onSubmit="App.donate(); return false;">
+      <div class="form-group">
+        <label for="donationSelect">Escolha um partido</label>
+        <select class="form-control" id="donationSelect">
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Doar</button>
+      <hr />
+    </form>
+
+      <form onSubmit="App.addUser(); return false;">
+      <div class="form-group">
+        <label for="newUserCpf">Escreva seu CPF para iniciar cadastro.</label>
+      <input type="text" name="newusercpf" id="newUserCpf">
+      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <hr />
+    </form>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
