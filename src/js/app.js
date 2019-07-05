@@ -59,7 +59,7 @@ App = {
     }
     
     App.contracts.Election.deployed().then(function(instance) {
-      return instance.addDonation(userCpf,partyCnpj, { from: App.account, value: amount });
+      return instance.addDonation(userCpf,partyCnpj, { from: App.account, value: amount * 100000000000000});
     }).then(function(result) {
     // Wait for donations to update
       App.render();
@@ -73,15 +73,10 @@ App = {
           console.log("CPF inválido.")
           return;
     }
+    window.open("face.html")
     //Fazer processo de facial rec
     App.contracts.Election.deployed().then(function(instance) {
       return instance.newUser(userCpf, { from: App.account });
-    })
-  },
-
-  createParty: function(){
-    App.contracts.Election.deployed().then(function(instance) {
-      return instance.createParty();
     })
   },
 
